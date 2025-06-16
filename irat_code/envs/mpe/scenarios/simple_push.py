@@ -1,6 +1,6 @@
 import numpy as np
-from onpolicy.envs.mpe.core import World, Agent, Landmark
-from onpolicy.envs.mpe.scenario import BaseScenario
+from irat_code.envs.mpe.core import World, Agent, Landmark
+from irat_code.envs.mpe.scenario import BaseScenario
 import random
 
 #

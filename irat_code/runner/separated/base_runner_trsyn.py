@@ -7,8 +7,8 @@ import torch
 from tensorboardX import SummaryWriter
 import copy
 
-from onpolicy.utils.separated_buffer_trsyn import SeparatedReplayBuffer
-from onpolicy.utils.util import update_linear_schedule
+from irat_code.utils.separated_buffer_trsyn import SeparatedReplayBuffer
+from irat_code.utils.util import update_linear_schedule
 
 
 def _t2n(x):
@@ -74,8 +74,8 @@ class Runner(object):
         # if not os.path.exists(self.eval_log_dir):
         #     os.makedirs(self.eval_log_dir)
 
-        # from onpolicy.algorithms.r_mappo.r_mappo import R_MAPPO as TrainAlgo
-        from onpolicy.algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy
+        # from irat_code.algorithms.r_mappo.r_mappo import R_MAPPO as TrainAlgo
+        from irat_code.algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy
 
         self.team_policy = []
         self.idv_policy = []
@@ -104,7 +104,7 @@ class Runner(object):
         if self.model_dir is not None:
             self.restore()
 
-        from onpolicy.algorithms.r_mappo.rmappo_trsyn import RMappoTrSyn as TrainAlgo
+        from irat_code.algorithms.r_mappo.rmappo_trsyn import RMappoTrSyn as TrainAlgo
 
         self.trainer = []
         self.buffer = []

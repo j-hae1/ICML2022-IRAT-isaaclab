@@ -11,9 +11,9 @@ import setproctitle
 import numpy as np
 from pathlib import Path
 import torch
-from onpolicy.config import get_config
-from onpolicy.envs.env_wrappers import SubprocVecEnv, DummyVecEnv
-from onpolicy.envs.sisl.environment import get_sisl_envs
+from irat_code.config import get_config
+from irat_code.envs.env_wrappers import SubprocVecEnv, DummyVecEnv
+from irat_code.envs.sisl.environment import get_sisl_envs
 
 """Train script for SISL."""
 
@@ -105,9 +105,9 @@ def parse_args(args, parser):
 def main(args):
     parser = get_config()
     # print(args)
-    from onpolicy.envs.sisl.multiwalker_config import get_multiwalker_config
-    from onpolicy.envs.sisl.waterworld_config import get_waterworld_config
-    from onpolicy.envs.sisl.pursuit_config import get_pursuit_config
+    from irat_code.envs.sisl.multiwalker_config import get_multiwalker_config
+    from irat_code.envs.sisl.waterworld_config import get_waterworld_config
+    from irat_code.envs.sisl.pursuit_config import get_pursuit_config
     
     # print(args)
     if "MultiWalker" in args:
@@ -205,13 +205,13 @@ def main(args):
     # run experiments
     if all_args.share_policy:
         if all_args.algorithm_name[-8:] == "trsynrnd":
-            from onpolicy.runner.shared.sisl_runner_trsyn_rnd import SISLRunner as Runner
+            from irat_code.runner.shared.sisl_runner_trsyn_rnd import SISLRunner as Runner
         elif all_args.algorithm_name[-5:] == "trsyn":
-            from onpolicy.runner.shared.sisl_runner_trsyn import SISLRunner as Runner
+            from irat_code.runner.shared.sisl_runner_trsyn import SISLRunner as Runner
         else:
-            from onpolicy.runner.shared.sisl_runner import SISLRunner as Runner
+            from irat_code.runner.shared.sisl_runner import SISLRunner as Runner
     else:
-        # from onpolicy.runner.separated.mpe_runner_trsyn import MPERunner as Runner
+        # from irat_code.runner.separated.mpe_runner_trsyn import MPERunner as Runner
         raise NotImplementedError
 
     runner = Runner(config)

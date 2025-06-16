@@ -1,7 +1,7 @@
-from onpolicy.envs.sisl.walker.multi_walker import MultiWalkerEnv
-from onpolicy.envs.sisl.pursuit.pursuit_evade import PursuitEvade
-from onpolicy.envs.sisl.pursuit_config import convert_puisuit
-from onpolicy.envs.sisl.pursuit.waterworld import MAWaterWorld
+from irat_code.envs.sisl.walker.multi_walker import MultiWalkerEnv
+from irat_code.envs.sisl.pursuit.pursuit_evade import PursuitEvade
+from irat_code.envs.sisl.pursuit_config import convert_puisuit
+from irat_code.envs.sisl.pursuit.waterworld import MAWaterWorld
 
 
 def get_sisl_envs(config):

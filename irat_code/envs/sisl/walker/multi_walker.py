@@ -9,10 +9,10 @@ from gym.utils import colorize, seeding
 from six.moves import xrange
 import Box2D
 from Box2D import (b2CircleShape, b2ContactListener, b2EdgeShape, b2FixtureDef, b2PolygonShape, b2RevoluteJointDef)
-from onpolicy.envs.sisl import AbstractMAEnv, Agent
+from irat_code.envs.sisl import AbstractMAEnv, Agent
 
 # from rltools.util import EzPickle
-from onpolicy.envs.sisl.utils import EzPickle
+from irat_code.envs.sisl.utils import EzPickle
 
 MAX_AGENTS = 40
 

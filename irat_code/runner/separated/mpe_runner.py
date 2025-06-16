@@ -6,8 +6,8 @@ import numpy as np
 from itertools import chain
 import torch
 
-from onpolicy.utils.util import update_linear_schedule
-from onpolicy.runner.separated.base_runner import Runner
+from irat_code.utils.util import update_linear_schedule
+from irat_code.runner.separated.base_runner import Runner
 import imageio
 
 def _t2n(x):

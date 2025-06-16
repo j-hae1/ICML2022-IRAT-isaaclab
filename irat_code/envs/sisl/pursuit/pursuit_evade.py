@@ -10,13 +10,13 @@ from gym import spaces
 from gym.utils import seeding
 from matplotlib.patches import Rectangle
 
-from onpolicy.envs.sisl import AbstractMAEnv
+from irat_code.envs.sisl import AbstractMAEnv
 from six.moves import xrange
 from .utils import agent_utils
 from .utils.AgentLayer import AgentLayer
 from .utils.Controllers import RandomPolicy
 
-from onpolicy.envs.sisl.utils import EzPickle
+from irat_code.envs.sisl.utils import EzPickle
 # from copy import deepcopy
 
 #################################################################

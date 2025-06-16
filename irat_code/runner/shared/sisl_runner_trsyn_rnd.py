@@ -4,9 +4,9 @@ from itertools import chain
 import torch
 from copy import deepcopy
 
-from onpolicy.runner.shared.base_runner_trsyn_rnd import Runner
+from irat_code.runner.shared.base_runner_trsyn_rnd import Runner
 import imageio
-from onpolicy.algorithms.utils.distributions import FixedNormal, FixedCategorical, FixedBernoulli
+from irat_code.algorithms.utils.distributions import FixedNormal, FixedCategorical, FixedBernoulli
 
 
 def _t2n(x):

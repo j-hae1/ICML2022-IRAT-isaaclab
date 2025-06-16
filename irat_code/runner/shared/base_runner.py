@@ -3,7 +3,7 @@ import os
 import numpy as np
 import torch
 from tensorboardX import SummaryWriter
-from onpolicy.utils.shared_buffer import SharedReplayBuffer
+from irat_code.utils.shared_buffer import SharedReplayBuffer
 
 def _t2n(x):
     """Convert torch tensor to a numpy array."""
@@ -72,8 +72,8 @@ class Runner(object):
 
         self.eval_log_dir = str(self.run_dir / 'eval_logs.txt')
 
-        from onpolicy.algorithms.r_mappo.r_mappo import R_MAPPO as TrainAlgo
-        from onpolicy.algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy
+        from irat_code.algorithms.r_mappo.r_mappo import R_MAPPO as TrainAlgo
+        from irat_code.algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy
 
         share_observation_space = self.envs.share_observation_space[0] if self.use_centralized_V else self.envs.observation_space[0]
 

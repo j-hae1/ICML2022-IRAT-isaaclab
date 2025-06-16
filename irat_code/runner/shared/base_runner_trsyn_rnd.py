@@ -4,7 +4,7 @@ import numpy as np
 import torch
 from tensorboardX import SummaryWriter
 
-from onpolicy.utils.shared_buffer_trsyn import SharedReplayBuffer
+from irat_code.utils.shared_buffer_trsyn import SharedReplayBuffer
 
 
 def _t2n(x):
@@ -73,7 +73,7 @@ class Runner(object):
         # if not os.path.exists(self.eval_log_dir):
         #     os.makedirs(self.eval_log_dir)
 
-        from onpolicy.algorithms.r_mappo.algorithm.rMAPPORNDPolicy import R_MAPPO_RND_Policy as Policy
+        from irat_code.algorithms.r_mappo.algorithm.rMAPPORNDPolicy import R_MAPPO_RND_Policy as Policy
         idv_share_observation_space = self.envs.share_observation_space[0] if self.idv_use_shared_obs \
             else self.envs.observation_space[0]
         team_share_observation_space = self.envs.share_observation_space[0] if self.use_centralized_V \
@@ -95,7 +95,7 @@ class Runner(object):
         if self.model_dir is not None:
             self.restore()
 
-        from onpolicy.algorithms.r_mappo.rmappo_trsyn_rnd import RMappoTrSynRnd as TrainAlgo
+        from irat_code.algorithms.r_mappo.rmappo_trsyn_rnd import RMappoTrSynRnd as TrainAlgo
 
         self.trainer = TrainAlgo(self.all_args, self.policy, device=self.device)
 

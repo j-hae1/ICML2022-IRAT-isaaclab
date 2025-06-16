@@ -3,9 +3,9 @@ import numpy as np
 from itertools import chain
 import torch
 
-from onpolicy.runner.shared.base_runner_trsyn import Runner
+from irat_code.runner.shared.base_runner_trsyn import Runner
 import imageio
-from onpolicy.algorithms.utils.distributions import FixedNormal, FixedCategorical, FixedBernoulli
+from irat_code.algorithms.utils.distributions import FixedNormal, FixedCategorical, FixedBernoulli
 
 
 def _t2n(x):

@@ -3,8 +3,8 @@ import scipy.spatial.distance as ssd
 from gym import spaces
 from gym.utils import seeding
 
-from onpolicy.envs.sisl import AbstractMAEnv, Agent
-from onpolicy.envs.sisl.utils import EzPickle
+from irat_code.envs.sisl import AbstractMAEnv, Agent
+from irat_code.envs.sisl.utils import EzPickle
 
 
 class Archea(Agent):

@@ -11,10 +11,10 @@ import setproctitle
 import numpy as np
 from pathlib import Path
 import torch
-from onpolicy.config import get_config
-from onpolicy.envs.starcraft2.StarCraft2_Env import StarCraft2Env
-from onpolicy.envs.starcraft2.smac_maps import get_map_params
-from onpolicy.envs.env_wrappers import ShareSubprocVecEnv, ShareDummyVecEnv
+from irat_code.config import get_config
+from irat_code.envs.starcraft2.StarCraft2_Env import StarCraft2Env
+from irat_code.envs.starcraft2.smac_maps import get_map_params
+from irat_code.envs.env_wrappers import ShareSubprocVecEnv, ShareDummyVecEnv
 
 """Train script for SMAC."""
 
@@ -186,12 +186,12 @@ def main(args):
     # run experiments
     if all_args.share_policy:
         if all_args.algorithm_name[-8:] == "trsynrnd":
-            from onpolicy.runner.shared.smac_runner_trsyn_rnd import SMACRNDRunner as Runner
+            from irat_code.runner.shared.smac_runner_trsyn_rnd import SMACRNDRunner as Runner
         else:
-            from onpolicy.runner.shared.smac_runner import SMACRunner as Runner
+            from irat_code.runner.shared.smac_runner import SMACRunner as Runner
     else:
         raise NotImplementedError
-        # from onpolicy.runner.separated.smac_runner import SMACRunner as Runner
+        # from irat_code.runner.separated.smac_runner import SMACRunner as Runner
 
     runner = Runner(config)
     runner.run()

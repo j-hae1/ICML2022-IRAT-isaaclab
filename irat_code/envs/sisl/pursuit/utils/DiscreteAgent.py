@@ -1,7 +1,7 @@
 import numpy as np
 
 from gym import spaces
-from onpolicy.envs.sisl import Agent
+from irat_code.envs.sisl import Agent
 
 
 #################################################################

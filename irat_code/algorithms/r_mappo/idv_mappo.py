@@ -1,9 +1,9 @@
 import numpy as np
 import torch
 import torch.nn as nn
-from onpolicy.utils.util import get_gard_norm, huber_loss, mse_loss
-from onpolicy.utils.valuenorm import ValueNorm
-from onpolicy.algorithms.utils.util import check
+from irat_code.utils.util import get_gard_norm, huber_loss, mse_loss
+from irat_code.utils.valuenorm import ValueNorm
+from irat_code.algorithms.utils.util import check
 from torch.distributions import kl_divergence
 
 

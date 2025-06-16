@@ -1,6 +1,6 @@
 import torch
-from onpolicy.algorithms.r_mappo.algorithm.r_actor_critic import R_Actor, R_Critic
-from onpolicy.utils.util import update_linear_schedule
+from irat_code.algorithms.r_mappo.algorithm.r_actor_critic import R_Actor, R_Critic
+from irat_code.utils.util import update_linear_schedule
 
 
 class R_MAPPO_RND_Policy:

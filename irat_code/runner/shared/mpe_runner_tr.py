@@ -1,7 +1,7 @@
 import time
 import numpy as np
 import torch
-from onpolicy.runner.shared.base_runner_tr import Runner
+from irat_code.runner.shared.base_runner_tr import Runner
 import wandb
 import imageio
 

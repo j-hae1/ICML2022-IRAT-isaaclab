@@ -5,8 +5,8 @@ import numpy as np
 from itertools import chain
 import torch
 
-from onpolicy.utils.util import update_linear_schedule
-from onpolicy.runner.separated.base_runner_tr import Runner
+from irat_code.utils.util import update_linear_schedule
+from irat_code.runner.separated.base_runner_tr import Runner
 import imageio
 from torch.distributions import kl_divergence as kld
 

@@ -7,8 +7,8 @@ from itertools import chain
 import torch
 from tensorboardX import SummaryWriter
 
-from onpolicy.utils.separated_buffer import SeparatedReplayBuffer
-from onpolicy.utils.util import update_linear_schedule
+from irat_code.utils.separated_buffer import SeparatedReplayBuffer
+from irat_code.utils.util import update_linear_schedule
 
 def _t2n(x):
     return x.detach().cpu().numpy()
@@ -71,8 +71,8 @@ class Runner(object):
         # if not os.path.exists(self.eval_log_dir):
         #     os.makedirs(self.eval_log_dir)
 
-        from onpolicy.algorithms.r_mappo.r_mappo import R_MAPPO as TrainAlgo
-        from onpolicy.algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy
+        from irat_code.algorithms.r_mappo.r_mappo import R_MAPPO as TrainAlgo
+        from irat_code.algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy
 
         self.policy = []
         for agent_id in range(self.num_agents):

@@ -5,7 +5,7 @@ import torch
 from tensorboardX import SummaryWriter
 from copy import deepcopy
 
-from onpolicy.utils.shared_buffer_trsyn import SharedReplayBuffer
+from irat_code.utils.shared_buffer_trsyn import SharedReplayBuffer
 
 
 def _t2n(x):
@@ -74,7 +74,7 @@ class Runner(object):
         # if not os.path.exists(self.eval_log_dir):
         #     os.makedirs(self.eval_log_dir)
 
-        from onpolicy.algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy
+        from irat_code.algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy
         idv_share_observation_space = self.envs.share_observation_space[0] if self.idv_use_shared_obs \
             else self.envs.observation_space[0]
         self.idv_policy = Policy(self.all_args,
@@ -103,11 +103,11 @@ class Runner(object):
             self.restore()
 
         if self.all_args.trsyn_use_imp:
-            from onpolicy.algorithms.r_mappo.rmappo_trsyn_series_imp import RMappoTrSynSeriesImprovement as TrainAlgo
+            from irat_code.algorithms.r_mappo.rmappo_trsyn_series_imp import RMappoTrSynSeriesImprovement as TrainAlgo
         elif self.all_args.trsyn_use_refine:
-            from onpolicy.algorithms.r_mappo.rmappo_trsyn_refine import RMappoTrSyn as TrainAlgo
+            from irat_code.algorithms.r_mappo.rmappo_trsyn_refine import RMappoTrSyn as TrainAlgo
         else:
-            from onpolicy.algorithms.r_mappo.rmappo_trsyn import RMappoTrSyn as TrainAlgo
+            from irat_code.algorithms.r_mappo.rmappo_trsyn import RMappoTrSyn as TrainAlgo
 
         self.trainer = TrainAlgo(self.all_args, self.idv_policy, self.team_policy, device=self.device)
 

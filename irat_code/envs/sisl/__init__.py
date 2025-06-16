@@ -1,4 +1,4 @@
-from onpolicy.envs.sisl.utils import EzPickle, stack_dict_list
+from irat_code.envs.sisl.utils import EzPickle, stack_dict_list
 from gym import spaces, error
 from gym.monitoring.video_recorder import ImageEncoder
 import numpy as np

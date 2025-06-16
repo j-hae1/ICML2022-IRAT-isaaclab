@@ -7,7 +7,7 @@ from gym.utils import seeding
 
 import ode
 import vapory as vap
-from onpolicy.envs.sisl import AbstractMAEnv, Agent
+from irat_code.envs.sisl import AbstractMAEnv, Agent
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)

@@ -3,8 +3,8 @@ import wandb
 import numpy as np
 from functools import reduce
 import torch
-from onpolicy.runner.shared.base_runner_trsyn import Runner
-from onpolicy.algorithms.utils.distributions import FixedNormal, FixedCategorical
+from irat_code.runner.shared.base_runner_trsyn import Runner
+from irat_code.algorithms.utils.distributions import FixedNormal, FixedCategorical
 
 
 def _t2n(x):
